@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pytictactoe.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="c++tictactoe.cpp">
+    <ClCompile Include="tictactoe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
