@@ -1,35 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
 using namespace std;
-
-/*class Board {
-
-public:
-	//vector<string> gameboard = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-	
-	void printgameboard()
-	{
-		cout << " " + gameboard[0] + " " << "|" << " " + gameboard[1] + " " << "|" << " " + gameboard[2] + " " << endl;
-		cout << "-----------" << endl;
-		cout << " " + gameboard[3] + " " << "|" " " + gameboard[4] + " " << "|" << " " + gameboard[5] + " " << endl;
-		cout << "-----------" << endl;
-		cout << " " + gameboard[6] + " " << "|" << " " + gameboard[7] + " " << "|" << " " + gameboard[8] + " \n" << endl;
-	}
-
-	bool checkwin(string mark)
-	{
-		return gameboard[0] == mark and gameboard[1] == mark and gameboard[2] == mark or 
-			gameboard[3] == mark and gameboard[4] == mark and gameboard[5] == mark or 
-			gameboard[6] == mark and gameboard[7] == mark and gameboard[8] == mark or 
-			gameboard[0] == mark and gameboard[3] == mark and gameboard[6] == mark or 
-			gameboard[1] == mark and gameboard[4] == mark and gameboard[7] == mark or 
-			gameboard[2] == mark and gameboard[5] == mark and gameboard[8] == mark or 
-			gameboard[0] == mark and gameboard[4] == mark and gameboard[8] == mark or 
-			gameboard[6] == mark and gameboard[4] == mark and gameboard[2] == mark;
-	}
-};*/
 
 class Board {
 
@@ -66,6 +38,7 @@ public:
 
 	void move(vector<vector<string>>& gameboard) {
 		int space = 0;
+//TODO: add error handling
 		while (true) {
 			cout << name + " Make your move! (1-9) ";
 			cin >> space;
