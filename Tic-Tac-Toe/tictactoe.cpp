@@ -38,17 +38,26 @@ public:
 
 	void move(vector<vector<string>>& gameboard) {
 		int space = 0;
-//TODO: add error handling
 		while (true) {
 			cout << name + " Make your move! (1-9) ";
 			cin >> space;
 			cout << endl;
 			space--;
-			if (gameboard[space/3][space%3] == to_string(space+1)) {
+			if (cin.fail()) {
+				cout << "Invalid Move!: ";
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				continue;
+			}
+			else if (space >= 9 or space <= -1) {
+				cout << "Invalid Move!" << endl;
+				continue;
+			}
+			else if (gameboard[space / 3][space % 3] == to_string(space + 1)) {
 				break;
 			}
 			else {
-				cout << "Invalid move!" << endl;
+				cout << "Invalid Move!" << endl;
 				continue;
 			}
 		}
@@ -65,6 +74,7 @@ int main()
 	Player player1("Player 1", "O");
 	Player player2("Player 2", "X");
 	cout << "Welcome to Tic Tac Toe!\n" << endl;
+
 	board.printgameboard();
 	int moves = 0;
 	string winner;
@@ -76,7 +86,6 @@ int main()
 			winner = player1.name;
 			break;
 		}
-
 		player2.move(board.gameboard);
 		board.printgameboard();
 		moves++;
