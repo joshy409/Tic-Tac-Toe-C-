@@ -122,4 +122,6 @@ int main()
 	else {
 		cout << winner + " Wins!" << endl;
 	}
+
+	system("pause");
 }
